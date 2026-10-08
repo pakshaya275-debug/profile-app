@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: html-demo
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: html-demo
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: html-demo
-        image: akshaya444/profile-app:v1
+        image: akshaya444/profile-app:v2
         ports:
         - containerPort: 80
 ---
