@@ -15,6 +15,7 @@ spec:
       containers:
       - name: html-demo
         image: akshaya444/profile-app:v2
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---

@@ -3,122 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Akshaya | Personal Profile</title>
+<title>Student Event Registration</title>
 <style>
   :root{
     --ink:#14213d;
     --muted:#52607a;
     --bg:#eef3fa;
-    --card:#ffffff;
     --accent:#1a4f8b;
-    --accent-soft:#dbe8f7;
-    --line:#d5deeb;
+    --accent-dark:#123864;
+    --line:#cfd8e6;
+    --ok:#1b7f4b;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
     font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     background:var(--bg);
     color:var(--ink);
-    line-height:1.6;
+    line-height:1.5;
     padding:32px 16px;
   }
-  .profile{
-    max-width:720px;
+  .card{
+    max-width:560px;
     margin:0 auto;
-    background:var(--card);
+    background:#fff;
     border-radius:16px;
     overflow:hidden;
     box-shadow:0 6px 24px rgba(20,33,61,.12);
   }
-  header{
-    background:var(--accent);
-    color:#fff;
-    padding:40px 32px;
-    display:flex;
-    align-items:center;
-    gap:24px;
+  .banner{background:var(--accent);color:#fff;padding:28px 32px;}
+  .banner h1{font-size:1.6rem;line-height:1.25;}
+  .banner p{margin-top:8px;opacity:.92;}
+  .meta{margin-top:12px;font-size:.9rem;opacity:.9;}
+  .badge{
+    display:inline-block;margin-top:14px;
+    background:#fff;color:var(--accent);
+    font-size:.8rem;font-weight:700;
+    padding:3px 12px;border-radius:999px;
   }
-  .avatar{
-    flex:none;
-    width:88px;height:88px;
-    border-radius:50%;
-    background:#fff;
-    color:var(--accent);
-    font-size:40px;
-    font-weight:700;
-    display:flex;align-items:center;justify-content:center;
+  form{padding:28px 32px 20px;}
+  .field{margin-bottom:16px;}
+  label{display:block;margin-bottom:6px;font-weight:600;font-size:.95rem;}
+  input{
+    width:100%;padding:10px 12px;
+    border:1px solid var(--line);border-radius:8px;
+    font:inherit;color:var(--ink);background:#fff;
   }
-  header h1{font-size:2rem;line-height:1.2;}
-  header p{opacity:.9;margin-top:4px;}
-  section{padding:24px 32px;border-top:1px solid var(--line);}
-  section:first-of-type{border-top:none;}
-  h2{font-size:1.1rem;color:var(--accent);margin-bottom:12px;}
-  .details{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;}
-  .details dt{font-weight:600;}
-  .details dd{color:var(--muted);}
-  .skills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;}
-  .skills li{
-    background:var(--accent-soft);
-    color:var(--accent);
-    padding:6px 14px;
-    border-radius:999px;
-    font-size:.92rem;
-    font-weight:600;
+  input:focus{outline:3px solid #b9d3f2;border-color:var(--accent);}
+  input[readonly]{background:#f4f7fb;color:var(--muted);}
+  button{
+    width:100%;padding:12px;margin-top:6px;
+    background:var(--accent);color:#fff;
+    border:none;border-radius:8px;
+    font:inherit;font-weight:700;cursor:pointer;
   }
-  .objective{color:var(--muted);max-width:60ch;}
+  button:hover{background:var(--accent-dark);}
+  button:focus-visible{outline:3px solid #b9d3f2;outline-offset:2px;}
+  #msg{
+    display:none;margin:0 32px 20px;padding:12px 14px;
+    background:#e6f5ec;color:var(--ok);
+    border-radius:8px;font-weight:600;
+  }
   footer{
-    background:var(--bg);
-    text-align:center;
-    font-size:.85rem;
-    color:var(--muted);
-    padding:14px;
+    background:var(--bg);text-align:center;
+    font-size:.82rem;color:var(--muted);padding:14px;
   }
   @media (max-width:520px){
-    header{flex-direction:column;text-align:center;padding:32px 20px;}
-    section{padding:20px;}
-    .details{grid-template-columns:1fr;gap:2px;}
-    .details dd{margin-bottom:10px;}
+    .banner,form{padding-left:20px;padding-right:20px;}
+    #msg{margin-left:20px;margin-right:20px;}
   }
 </style>
 </head>
 <body>
-  <main class="profile">
-    <header>
-      <div class="avatar" aria-hidden="true">A</div>
-      <div>
-        <h1>Akshaya P</h1>
-        <p>Software Engineering Student</p>
+  <main class="card">
+    <div class="banner">
+      <h1>National Tech Hackathon 2026</h1>
+      <p>A 24-hour innovation and coding challenge where student teams build working solutions to real problems.</p>
+      <p class="meta">Event date: 15 October 2026</p>
+      <span class="badge">Version 1</span>
+    </div>
+
+    <form id="regForm">
+      <div class="field">
+        <label for="name">Student name</label>
+        <input id="name" type="text" value="Akshaya P" required>
       </div>
-    </header>
+      <div class="field">
+        <label for="reg">Register number</label>
+        <input id="reg" type="text" value="24MIS0112" required>
+      </div>
+      <div class="field">
+        <label for="dept">Department</label>
+        <input id="dept" type="text" value="Software Engineering" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+      </div>
+      <div class="field">
+        <label for="date">Event date</label>
+        <input id="date" type="date" value="2026-10-15" required>
+      </div>
+      <button type="submit">Register for this event</button>
+    </form>
 
-    <section>
-      <h2>Student details</h2>
-      <dl class="details">
-        <dt>Register number</dt><dd>24MIS0112</dd>
-        <dt>Department</dt><dd>Software Engineering</dd>
-        <dt>Course</dt><dd>ISWE406P – Agile Development Process and Azure DevOps &amp; DevOps</dd>
-      </dl>
-    </section>
+    <div id="msg" role="status"></div>
 
-    <section>
-      <h2>Skills</h2>
-      <ul class="skills">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Git</li>
-        <li>Docker</li>
-        <li>Kubernetes</li>
-        <li>Jenkins</li>
-        <li>CI/CD Pipelines</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Career objective</h2>
-      <p class="objective">To work as a DevOps engineer and build reliable, automated software delivery pipelines that help teams ship quality software faster.</p>
-    </section>
-
-    <footer>Served from a Docker container on Kubernetes</footer>
+    <footer>Served from a Docker container on Kubernetes (3 replicas)</footer>
   </main>
+
+<script>
+  document.getElementById('regForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var n = document.getElementById('name').value;
+    var m = document.getElementById('msg');
+    m.textContent = 'Thanks ' + n + ', you are registered for National Tech Hackathon 2026.';
+    m.style.display = 'block';
+  });
+</script>
 </body>
 </html>
